@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f9f4f4;
+      font-family: Arial, sans-serif;
+    }
+    .btn-custom-header{
+      width: auto;
+      
+      color: #9361b4;
+      font-weight: bold; 
+      font-size: 1.2rem;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px 10px 10px 10px;
+
+
+    }
+    .form-container {
+      max-width: 900px;
+      margin: 40px auto;
+      background:  #d7bccd, #bc9bb2, #5c3f53;
+      border-radius: 15px;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    }
+    .form-header {
+      background: linear-gradient(to right, #c94bdb, #f06292);
+      color: white;
+      padding: 15px;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 15px 15px 15px 15px;
+    }
+    .btn-custom {
+      background: linear-gradient(to right, #c94bdb, #f06292);
+      border: none;
+      color: #fff;
+    }
+    .btn-custom:hover {
+      opacity: 0.9;
+    }
+    .section-title {
+      font-weight: bold;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Title -->
+    <div class="text-center my-3">
+      <button class="btn btn-custom-header" style ="width: auto;" >
+       <h4> Modern Registration Form </h4></button>
+    </div>
+
+    <!-- Student Registration Form -->
+    <div class="form-container">
+      <div class="form-header">
+        <h3>Student Registration Form</h3>
+      </div>
+      <form class="p-4 needs-validation" novalidate>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="Enter first name" required>
+            <div class="invalid-feedback">First name is required</div>
+          </div>
+          <div class="col-md-6">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Enter last name" required>
+            <div class="invalid-feedback">Last name is required</div>
+          </div>
+
+          <!-- DOB -->
+          <div class="col-md-12 section-title">Date of Birth</div>
+          <div class="col-md-4">
+            <select class="form-select" required>
+              <option value="">Day</option>
+              <script>
+                for (let i = 1; i <= 31; i++) {
+                  document.write(`<option>${i}</option>`);
+                }
+              </script>
+            </select>
+            <div class="invalid-feedback">Please select day</div>
+          </div>
+          <div class="col-md-4">
+            <select class="form-select" required>
+              <option value="">Month</option>
+              <option>January</option><option>February</option><option>March</option>
+              <option>April</option><option>May</option><option>June</option>
+              <option>July</option><option>August</option><option>September</option>
+              <option>October</option><option>November</option><option>December</option>
+            </select>
+            <div class="invalid-feedback">Please select month</div>
+          </div>
+          <div class="col-md-4">
+            <select class="form-select" required>
+              <option value="">Year</option>
+              <script>
+                for (let i = 1980; i <= 2025; i++) {
+                  document.write(`<option>${i}</option>`);
+                }
+              </script>
+            </select>
+            <div class="invalid-feedback">Please select year</div>
+          </div>
+
+          <!-- Email + Mobile -->
+          <div class="col-md-6">
+            <label class="form-label">Email ID</label>
+            <input type="email" class="form-control" placeholder="Enter email address" required>
+            <div class="invalid-feedback">Valid email required</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Mobile Number</label>
+            <input type="tel" pattern="[0-9]{10}" class="form-control" placeholder="Enter 10-digit mobile number" required>
+            <div class="invalid-feedback">Enter valid 10-digit mobile number</div>
+          </div>
+
+          <!-- Gender -->
+          <div class="col-md-12 section-title">Gender</div>
+          <div class="col-md-12">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="gender" id="male" required>
+              <label class="form-check-label" for="male">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="gender" id="female" required>
+              <label class="form-check-label" for="female">Female</label>
+            </div>
+            <div class="invalid-feedback ">Please select gender</div>
+          </div>
+
+          <!-- Address -->
+          <div class="col-md-12">
+            <label class="form-label">Address</label>
+            <textarea class="form-control" rows="2" required></textarea>
+            <div class="invalid-feedback">Address required</div>
+          </div>
+
+          <!-- City, Pin, State -->
+          <div class="col-md-4">
+            <label class="form-label">City</label>
+            <input type="text" class="form-control" placeholder="Enter city" required>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">PIN Code</label>
+            <input type="text" pattern="[0-9]{6}" class="form-control" placeholder="Enter 6-digit PIN code" required>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">State</label>
+            <input type="text" class="form-control" placeholder="Enter state" required>
+          </div>
+
+          <!-- Country -->
+          <div class="col-md-12">
+            <label class="form-label">Country</label>
+            <select class="form-select" required>
+              <option value="">Select country</option>
+              <option>India</option>
+              <option>USA</option>
+              <option>UK</option>
+              <option>Canada</option>
+              <option>Australia</option>
+            </select>
+          </div>
+
+          <!-- Hobbies -->
+          <div class="col-md-12 section-title">Hobbies</div>
+          <div class="col-md-12">
+            <div class="form-check form-check-inline">
+              <input type="checkbox" class="form-check-input" id="coding">
+              <label class="form-check-label" for="coding">Coding</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="checkbox" class="form-check-input" id="travelling">
+              <label class="form-check-label" for="travelling">Travelling</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="checkbox" class="form-check-input" id="biking">
+              <label class="form-check-label" for="biking">Biking</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="checkbox" class="form-check-input" id="cricket">
+              <label class="form-check-label" for="cricket">Cricket</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="checkbox" class="form-check-input" id="others">
+              <label class="form-check-label" for="others">Others</label>
+            </div>
+          </div>
+
+          <!-- Qualification -->
+          <div class="col-md-12 section-title " >Qualification</div>
+          <div class="table-responsive">
+            <table class="table table-bordered text-center" 
+            style="border-radius: 15px; overflow: hidden;">
+              <thead class="table-light">
+                <tr>
+                  <th>S. No.</th>
+                  <th>Examination</th>
+                  <th>Board</th>
+                  <th>Percentage</th>
+                  <th>Year of Passing</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td><td>Class X</td>
+                  <td><input type="text" class="form-control" required></td>
+                  <td><input type="number" class="form-control" required></td>
+                  <td><input type="number" class="form-control" required></td>
+                </tr>
+                <tr>
+                  <td>2</td><td>Class XII</td>
+                  <td><input type="text" class="form-control" required></td>
+                  <td><input type="number" class="form-control" required></td>
+                  <td><input type="number" class="form-control" required></td>
+                </tr>
+                <tr>
+                  <td>3</td><td>Graduation</td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="number" class="form-control"></td>
+                  <td><input type="number" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td>4</td><td>Masters</td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="number" class="form-control"></td>
+                  <td><input type="number" class="form-control"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Courses Applied -->
+          <div class="col-md-12 section-title">Courses Applied For</div>
+          <div class="col-md-12">
+            <div class="form-check form-check-inline">
+              <input type="radio" name="course" class="form-check-input" required>
+              <label class="form-check-label">BCA</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" name="course" class="form-check-input">
+              <label class="form-check-label">B.E./B.Tech.</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" name="course" class="form-check-input">
+              <label class="form-check-label">B.Sc</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" name="course" class="form-check-input">
+              <label class="form-check-label">B.A</label>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="col-md-12 text-end mt-3">
+            <button type="reset" class="btn btn-secondary">Reset</button>
+            <button type="submit" class="btn btn-custom" >Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Bottom Title -->
+    <div class="text-center my-3">
+      <button class="btn btn-light" 
+        style="width: auto; color: #135f44; font-size : 1.2rem; font-weight: bolder;" >
+          <h4> Professional Registration Form </h4>
+      </button>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Bootstrap validation
+    (function () {
+      'use strict'
+      const forms = document.querySelectorAll('.needs-validation')
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+  </script>
+</body>
+</html>
