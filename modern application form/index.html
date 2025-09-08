@@ -33,7 +33,6 @@
       background: linear-gradient(to right, #c94bdb, #f06292);
       color: white;
       padding: 15px;
-      font-weight: bold;
       text-align: center;
       border-radius: 15px 15px 15px 15px;
     }
@@ -46,7 +45,6 @@
       opacity: 0.9;
     }
     .section-title {
-      font-weight: bold;
       margin-top: 20px;
       margin-bottom: 10px;
     }
@@ -121,13 +119,13 @@
           </div>
           <div class="col-md-6">
             <label class="form-label">Mobile Number</label>
-            <input type="tel" pattern="[0-9]{10}" class="form-control" placeholder="Enter 10-digit mobile number" required>
+            <input type="number"  class="form-control" placeholder="Enter 10-digit mobile number" required>
             <div class="invalid-feedback">Enter valid 10-digit mobile number</div>
           </div>
 
           <!-- Gender -->
-          <div class="col-md-12 section-title">Gender</div>
-          <div class="col-md-12">
+          <div class="col-md-12 section-title ">Gender</div>
+          <div class="col-md-6">
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="gender" id="male" required>
               <label class="form-check-label" for="male">Male</label>
@@ -153,7 +151,7 @@
           </div>
           <div class="col-md-4">
             <label class="form-label">PIN Code</label>
-            <input type="text" pattern="[0-9]{6}" class="form-control" placeholder="Enter 6-digit PIN code" required>
+            <input type="number"  class="form-control" placeholder="Enter 6-digit PIN code" required>
           </div>
           <div class="col-md-4">
             <label class="form-label">State</label>
@@ -170,6 +168,12 @@
               <option>UK</option>
               <option>Canada</option>
               <option>Australia</option>
+              <option>China</option>
+              <option>Sri Lanka</option>
+              <option>Thailand</option>
+              <option>New Zealand</option>
+              <option>Switzerland</option>
+              <option>Laos</option>
             </select>
           </div>
 
